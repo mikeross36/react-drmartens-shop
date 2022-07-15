@@ -1,0 +1,67 @@
+@use "../../style/mixins";
+@use "../../style/variables" as *;
+
+.newsletter__container {
+    background-color: $darkClr;
+    color: $whiteClr;
+    padding: 2rem .5rem;
+    border-radius: $radius;
+    text-align: center;
+
+    @include mixins.breakpoint-up(medium) {
+        grid-template-columns: max-content max-content;
+        justify-content: center;
+        align-items: center;
+        column-gap: 3rem;
+        padding: 4.5rem 1rem;
+    }
+
+    .newsletter__title {
+        margin-bottom: $mb-2;
+        text-transform: capitalize;
+    }
+
+    .newsletter__description {
+        margin-bottom: $mb-5;
+        text-transform: capitalize;
+    }
+
+    .newsletter__subscribe {
+        display: flex;
+        column-gap: .5rem;
+        background-color: $whiteClr;
+        padding: .5rem;
+        border-radius: $radius;
+
+        .newsletter__input {
+            border: none;
+            outline: none;
+            width: 90%;
+            font-size: $fontMd;
+
+            &::placeholder {
+                color: $darkClr;
+                font-size: $fontMd;
+            }
+        }
+
+        .form__button {
+            padding: 1rem;
+            background-color: $softGreenClr;
+            border-radius: $radius;
+            transition: .3s;
+            box-shadow: $shadowOne;
+
+            & a {
+                text-transform: uppercase;
+                color: $darkClr;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+            &:hover {
+                transform: translateY(-.25rem);
+            }
+        }
+    }
+}

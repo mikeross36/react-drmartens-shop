@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react"
+// import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Header from "./components/header/Header";
+import Home from "./components/home/Home";
+import Featured from "./components/featured/Featured";
+import Collection from "./components/collection/Collection"
+import Female from "./components/female/Female";
+import Offer from "./components/offer/Offer";
+import NewCollection from "./components/new/NewCollection";
+import Newsletter from "./components/newsletter/Newsletter";
+import Footer from "./components/footer/Footer"
+import Cart from "./components/cart/Cart";
+import Shop from "./components/shop/Shop";
 
-function App() {
+const App = () => {
+  const [showCart, setShowCart] = useState(false)
+
+  const openCart = () => {
+    setShowCart(true)
+  }
+
+  const closeCart = () => {
+    setShowCart(false)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header openCart={openCart}/>
+      <Cart
+        showCart={showCart}
+        closeCart={closeCart}
+      />
+      <Home />
+      <Featured />
+      <Collection />
+      <Female />
+      <Offer />
+      <NewCollection />
+      <Shop />
+      <Newsletter />
+      <Footer />
+    </>
+  )
 }
 
 export default App;
