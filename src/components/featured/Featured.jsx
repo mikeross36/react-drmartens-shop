@@ -2,7 +2,8 @@
 import ButtonLight from "../buttons/Button_light"
 import {boots} from "./data"
 
-const Featured = () => {
+const Featured = (props) => {
+    const { openCart } = props;
     return (
         <main className="main">
             <section className="featured section" id="featured">
@@ -16,7 +17,7 @@ const Featured = () => {
                                 <img src={image} alt="sale boot" className="boot__img" />
                                 <span className="boot__name">{name}</span>
                                 <span className="boot__price">{price}</span>
-                                <ButtonLight />
+                                <span onClick={openCart}><ButtonLight /></span>
                             </article>
                         )
                     })}

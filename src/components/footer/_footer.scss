@@ -44,8 +44,15 @@
     }
 
     .footer__social {
-        display: block;
-        margin-bottom: $mb-2;
+        display: inline-block;
+        padding: .4rem;
+        border-radius: 50%;
+        margin-right: $mb-1;
+        box-shadow: $shadowTwo;
+
+        & img {
+            filter: drop-shadow($shadowTwo);
+        }
     }
 }
 

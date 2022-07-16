@@ -1,70 +1,57 @@
 @use "../../style/mixins";
-@use "../../stylevariables" as *;
+@use "../../style/variables" as *;
 
 .shop {
-    background: red;
-    .home__link {
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        margin-top: -2rem;
-        margin-bottom: $mb-5;
 
-        &-link {
-            display: block;
-            padding: .2rem .5rem;
-            font-size: $fontMd;
-            font-weight: 700;
-            color: $darkClr;
-            transition: .3s;
-            border-radius: $radius;
-
-            &:hover {
-                transform: scale(1.2);
-                color: $softGreenClr;
-                text-shadow: .1rem .1rem .1rem $darkClr-light
-            }
+    .shop__container {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        row-gap: 1rem;
+        column-gap: 3rem;
+    
+        @include mixins.breakpoint-up(medium) {
+            column-gap: 2rem;
         }
-    }
-
-    .boot {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 2rem 1rem;
-        background-color: $lightClr;
-        border-radius: $radius;
-        box-shadow: $shadowOne;
-        transition: .3s;
-
-        .boot__img {
-            position: absolute;
-            top: 2rem;
+    
+        .shop__boot {
+            position: relative;
+            height: 15rem;
             width: 10rem;
-            transform: $rotateImg;
-            filter: drop-shadow(0 12px 8px rgba(0,0,0, .2));
-        }
-
-        .boot__price {
-            margin-bottom: $mb-5;
-        }
-    }
-}
-
-.boot__pages {
-    margin-top: $mb-6;
-
-    .boot__page {
-        display: inline-block;
-        padding: .5rem 1rem;
-        border: 2px solid $darkClr;
-        font-weight: 500;
-
-        &:hover {
-            background-color: $darkClr;
-            color: $lightClr;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 2rem 1rem;
+            background-color: $lightClr;
+            border-radius: $radius;
+            box-shadow: $shadowOne;
+            transition: .3s;
+    
+            &:hover {
+                transform: translateY(-.5rem);
+            }
+    
+            &-img {
+                position: absolute;
+                top: 2.5rem;
+                width: 8rem;
+                transform: $rotateImg;
+                filter: drop-shadow(0 12px 8px rgba(0,0,0, .2));        
+            }
+    
+            &-name, &-price {
+                font-size: $fontMd;
+                font-weight: 500;
+            }
+    
+            &-name {
+                margin-bottom: $mb-1;
+                text-transform: capitalize;
+            }
+    
+            &-price {
+                margin-bottom: $mb-1;
+            }
         }
     }
 }

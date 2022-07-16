@@ -2,7 +2,8 @@ import React from "react"
 import { boots } from "./data"
 import ButtonLight from "../buttons/Button_light"
 
-const Female = () => {
+const Female = (props) => {
+    const { openCart } = props;
     return (
         <main className="main">
             <section className="female section" id="female">
@@ -15,7 +16,7 @@ const Female = () => {
                                 <img src={image} alt="women boot" className="boot__img" />
                                 <span className="boot__name">{name}</span>
                                 <span className="boot__price">{price}</span>
-                                <ButtonLight />
+                                <span onClick={openCart}><ButtonLight /></span>
                             </article>
                         )
                     })}

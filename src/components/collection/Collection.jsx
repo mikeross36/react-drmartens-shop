@@ -1,6 +1,6 @@
 import React from "react"
 import { collections } from "./data";
-import ButtonLight from "../buttons/Button_light";
+import Button from "../buttons/Button";
 
 const Collection = () => {
     return (
@@ -14,7 +14,7 @@ const Collection = () => {
                                 <div className="collection__data">
                                     <h3 className="collection__name">{name}</h3>
                                     <p className="collection__description">{description}</p>
-                                    <ButtonLight />
+                                    <Button />
                                 </div>
                                 <img src={image} alt="collection" className="collection__img"/>
                             </div>

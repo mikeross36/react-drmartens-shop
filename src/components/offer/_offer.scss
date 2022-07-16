@@ -9,7 +9,7 @@
         justify-content: center;
         background-color: $lightClr;
         border-radius: $radius;
-        box-shadow: $shadowOne;
+        box-shadow: $shadowTwo;
 
         @include mixins.breakpoint-up(small){
             grid-template-columns: max-content max-content;

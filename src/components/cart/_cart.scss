@@ -29,7 +29,13 @@
 
     .cart__title-center {
         text-align: center;
-        margin-bottom: $mb-3;
+        margin-bottom: $mb-4;
+        text-transform: uppercase;
+        background: linear-gradient(170deg, #fac002 27.16%, #2d03fd 97.86%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
     }
 
     .cart__container {

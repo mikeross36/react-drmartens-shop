@@ -25,7 +25,7 @@
         padding: 1rem 2rem;
         border-radius: $radius;
         transition: .3s;
-        box-shadow: $shadowOne;
+        box-shadow: $shadowTwo;
 
         @include mixins.breakpoint-up(small) {
             align-items: center;

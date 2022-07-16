@@ -5,7 +5,7 @@
     padding: 1rem 2rem;
     border-radius: $radius;
     transition: .3s;
-    box-shadow: $shadowOne;
+    box-shadow: $shadowTwo;
 
     & a {
         text-transform: uppercase;
@@ -27,7 +27,7 @@
     font-weight: 700;
     background-color: $softGreenClr;
     align-items: center;
-    box-shadow: $shadowOne;
+    box-shadow: $shadowTwo;
     border-radius: $radius;
     cursor: pointer;
 

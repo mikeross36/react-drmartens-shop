@@ -31,12 +31,12 @@ const App = () => {
         closeCart={closeCart}
       />
       <Home />
-      <Featured />
+      <Featured openCart={openCart}/>
       <Collection />
-      <Female />
+      <Female openCart={openCart}/>
       <Offer />
       <NewCollection />
-      <Shop />
+      <Shop openCart={openCart}/>
       <Newsletter />
       <Footer />
     </>
