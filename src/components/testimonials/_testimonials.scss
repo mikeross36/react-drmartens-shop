@@ -103,11 +103,7 @@
     .slider__button-prev {
         background: transparent;
         position: absolute;
-        bottom: 5%;
-
-        @include mixins.breakpoint-up(large) {
-            bottom: 10%;
-        }
+        bottom: 10%;
     }
 
     .slider__button-prev {
