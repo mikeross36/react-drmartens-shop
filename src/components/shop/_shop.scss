@@ -2,6 +2,7 @@
 @use "../../style/variables" as *;
 
 .shop {
+    background-color: $bodyBcg;
 
     .shop__container {
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));

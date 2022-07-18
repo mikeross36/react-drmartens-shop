@@ -7,6 +7,7 @@ import Collection from "./components/collection/Collection"
 import Female from "./components/female/Female";
 import Offer from "./components/offer/Offer";
 import NewCollection from "./components/new/NewCollection";
+import Testimonials from "./components/testimonials/Testimonials";
 import Newsletter from "./components/newsletter/Newsletter";
 import Footer from "./components/footer/Footer"
 import Cart from "./components/cart/Cart";
@@ -36,6 +37,7 @@ const App = () => {
       <Female openCart={openCart}/>
       <Offer />
       <NewCollection />
+      <Testimonials />
       <Shop openCart={openCart}/>
       <Newsletter />
       <Footer />

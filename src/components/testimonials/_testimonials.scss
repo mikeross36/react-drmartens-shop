@@ -1,0 +1,120 @@
+@use "../../style/mixins";
+@use "../../style/variables" as *;
+
+.testimonial {
+    position: relative;
+
+    &__container {
+        padding-bottom: 4rem;
+        
+        @include mixins.breakpoint-up(large){
+            padding-bottom: 2rem;
+        }
+    }
+
+    .testimonial__slider {
+        width: 100%;
+        margin-left: initial;
+        margin-right: initial;
+        box-shadow: $shadowTwo;
+        border-radius: $radius;
+       
+        .slider__wrapper {
+            position: relative;
+            height: 20rem;
+            overflow: hidden;
+
+            @include mixins.breakpoint-up(medium) {
+                height: 30rem;
+                margin: 0 auto;
+            }
+
+            .testimonial__slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: .3s;
+                
+                &.active-slide {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                &.prev-slide {
+                    transform: translateX(-100%);
+                }
+
+                &.next-slide {
+                    transform: translateX(100%);
+                }
+
+                .testimonial__slide-content {
+                    width: 50vw;
+                    height: 100%;
+                    padding: 1rem;
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: flex-start;
+                    color: $whiteClr;
+                    text-shadow: $shadowText;
+
+                    @include mixins.breakpoint-up(large) {
+                        width: 30vw;
+                        padding: 2rem;
+                    }
+
+                    .testimonial__description {
+                        font-size: $fontSm;
+
+                        @include mixins.breakpoint-up(medium){
+                            line-height: 170%;
+                            padding-top: 2rem;
+                            font-size: $fontMd;
+                        }
+                    }
+
+                    .testimonial__profile {
+                        padding-top: 2rem;
+
+                        .testimonial__profile-detail {
+                            font-size: $fontSm;
+                        }
+                    }
+                    
+                }
+
+                &-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    border-radius: $radius;
+                    object-fit: cover;
+                }
+            }
+        }        
+    }
+    .slider__button-next, 
+    .slider__button-prev {
+        background: transparent;
+        position: absolute;
+        bottom: 5%;
+
+        @include mixins.breakpoint-up(large) {
+            bottom: 10%;
+        }
+    }
+
+    .slider__button-prev {
+        left: 20%;
+    }
+
+    .slider__button-next {
+        right: 20%;
+    }
+}
