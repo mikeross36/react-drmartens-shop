@@ -30,6 +30,9 @@ const Header = (props) => {
 
     const toggleMobileMenu = () => {
         setShowMobileMenu(!showMobileMenu)
+        if (showSearch) {
+            setShowSearch(false)
+        }
     }
 
     const closeMobileMenu = () => {
