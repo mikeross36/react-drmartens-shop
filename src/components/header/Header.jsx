@@ -4,10 +4,12 @@ import logo from "../../images/boot-logo.svg"
 import { links } from "./data"
 import closeBtn from "../../images/close-btn.svg"
 import shopIcon from "../../images/shopping-cart.svg"
+import searchIcon from "../../images/search-icon.svg"
 
 const Header = (props) => {
     const { openCart } = props;
     const [showMobileMenu, setShowMobileMenu] = useState(false)
+    const [showSearch, setShowSearch] = useState(false)
     const [scrollHeader, setScrollHeader] = useState(false)
 
     useEffect(() => {
@@ -34,6 +36,10 @@ const Header = (props) => {
         setShowMobileMenu(false)
     }
 
+    const toggleSearch = () => {
+        setShowSearch(!showSearch)
+    }
+
     return (
         <header className={`header ${scrollHeader && "scroll-header"}`} id="header">
             <nav className="nav grid">
@@ -44,7 +50,7 @@ const Header = (props) => {
                     <img src={logo} alt="loog" width="30px" height="30px" />
                     martens
                 </a>
-                <div className={`nav__menu ${showMobileMenu && "show"}`}>
+                <div className={`nav__menu ${showMobileMenu && "show-menu"}`}>
                     <ul className="nav__list">
                         {links.map(link => {
                             const { id, url, text } = link;
@@ -59,8 +65,16 @@ const Header = (props) => {
                         <img src={closeBtn} alt="close menu btn" width="35px" height="35px"/>
                     </a>
                 </div>
-                <div className="nav__shop" id="nav-shop" onClick={openCart}>
-                    <img src={shopIcon} alt="shopping cart icon" width="30px" height="30px"/>
+                <div className="nav__icons">
+                    <div className="nav__search" onClick={toggleSearch}>
+                        <img src={searchIcon} alt="" className="search__icon" width="30px" height="30px"/>
+                    </div>
+                    <div className="nav__shop" id="nav-shop" onClick={openCart}>
+                        <img src={shopIcon} alt="shopping cart icon" width="30px" height="30px"/>
+                    </div>
+                </div>
+                <div className={`nav__search-form ${showSearch && "active-form"}`}>
+                    <input type="search" className="search__input" placeholder="search here..."/>
                 </div>
             </nav>
         </header>

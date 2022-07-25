@@ -42,7 +42,6 @@
         }
         &__menu {
 
-            /* during development, value of left: 0; */
             @include mixins.breakpoint-down(medium){
                 position: fixed;
                 top: $headerHight;
@@ -69,8 +68,12 @@
                 margin-bottom: $mb-5;
 
                 @include mixins.breakpoint-up(medium){
-                    margin-left: $mb-6;
+                    margin-left: $mb-4;
                     margin-bottom: 0;
+                }
+
+                @include mixins.breakpoint-up(large) {
+                    margin-left: $mb-6;
                 }
 
                 .nav__link {
@@ -78,6 +81,14 @@
                     color: $darkClr;
                     font-weight: 700;
                     text-transform: capitalize;
+
+                    @include mixins.breakpoint-up(medium) {
+                        font-size: 1.2rem;
+                    }
+
+                    @include mixins.breakpoint-up(large) {
+                        font-size: $fontSlg;
+                    }
                 }
             }
 
@@ -93,7 +104,7 @@
             }
         }
 
-        &__logo img, &__shop img {
+        &__logo img, &__shop img, .nav__search img {
             cursor: pointer;
             
             @include mixins.breakpoint-up(large) {
@@ -101,9 +112,49 @@
                 height: 40px;
             }
         }
+
+        .nav__icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__search-form {
+            position: absolute;
+            top: 145%;
+            right: 5%;
+            width: 90%;
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: .2s;
+
+            @include mixins.breakpoint-up(medium){
+                width: 30rem;
+                right: 7%;
+            }
+
+            @include mixins.breakpoint-up(xlarge){
+                right: 13%;
+            }
+
+            &.active-form {
+                transform: scaleY(1);
+            }
+
+            .search__input {
+                height: 100%;
+                width: 100%;
+                font-size: $fontMd;
+                color: $darkClr;
+                padding: 1rem;
+                text-transform: none;
+            }
+        }
     }
 
-    .show {
+    .show-menu {
         left: 0;
     }
 }
